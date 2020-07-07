@@ -11,12 +11,11 @@ function next(node, collection) {
 }
 
 function nodeAt(index, headValue, collection) {
-  const head = headNode(headValue, collection);
-  let nextNode = head;
+  let current = headNode(headValue, collection);
   for (let i=0; i<index; i++) {
-    nextNode = next(nextNode, collection);
+    current = next(current, collection);
   }
-  return nextNode
+  return current
 }
 
 function addressAt(index, headValue, collection) {
@@ -26,15 +25,10 @@ function addressAt(index, headValue, collection) {
 
 function indexAt(node, collection, headValue) {
   let nextNode = headNode(headValue, collection);
-  let notFound = true;
   let index = 0;
-  while (notFound) {
-    if (nextNode === node) {
-      notFound = false;
-    } else {
-      nextNode = next(nextNode, collection);
-      index += 1;
-    }
+  while (nextNode !== node) {
+    nextNode = next(nextNode, collection);
+    index++;
   }
   return index;
 }
