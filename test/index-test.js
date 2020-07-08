@@ -4,6 +4,7 @@ var sinon = require('sinon');
 // write function called get head.
 
 
+
 describe('#getName', function() {
   it("should return the name of the node passed through", function() {
     let node = {name: 'Susie'}
@@ -115,6 +116,7 @@ describe('#insertNodeAt', function() {
 
   it("should insert the node at the provided index, while maintaining order of all the other nodes", function() {
     let firstNode = {name: 'susie', next: 'rkjasj'}
+    //added node here, firstNode needs new address, this node needs firstNode's next
     let secondNode = {name: 'sam', next: 'asnan'}
     let newNode = {name: 'jill', next: ''}
     let lastNode = {name: 'charlie', next: null}
