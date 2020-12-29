@@ -64,7 +64,7 @@ describe('#addressAt', function(){
     let firstNode = {name: 'susie', next: 'rkjasj'}
     let secondNode = {name: 'sam', next: 'asnan'}
     let lastNode = {name: 'charlie', next: null}
-    let collection = {rkjasj: secondNode, asnan: lastNode, whana: firstNode}
+    let collection = {whana: firstNode, rkjasj: secondNode, asnan: lastNode}
     let linkedList = 'whana'
     expect(addressAt(1, linkedList, collection)).toEqual('rkjasj')
     expect(addressAt(0, linkedList, collection)).toEqual('whana')
